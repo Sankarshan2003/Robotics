@@ -71,10 +71,13 @@ void setup() {
   initUltrasound();
   //Creating Reading Ultrasonic sensor task
   TaskHandle_t readTaskHandle;
-  xTaskCreate(read,"Read Task",STACK_SIZE_READ,NULL,7,&readTaskHandle);
+  xTaskCreate(read,"Read Task",STACK_SIZE_READ,NULL,6,&readTaskHandle);
   //Creating printing Task
   TaskHandle_t printSensorValues;
   xTaskCreate(print,"Serial Print",STACK_SIZE_READ,NULL,1,&printSensorValues);
+  //Creating Control Task
+  TaskHandle_t control;
+  //xTaskCreate(cont,"Control Task",STACK_SIZE_READ,NULL,7,&control);
  
 }
 
